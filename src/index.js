@@ -17,10 +17,10 @@ function addToPage() {
     li.textContent = arr[i];
     let removeBtn = document.createElement("button");
     removeBtn.classList.add("remove");
-    removeBtn.innerHTML = `<i class="fa-solid fa-trash"></i>`;
+    removeBtn.textContent = `remove`;
     let editBtn = document.createElement("button");
     editBtn.classList.add("edit");
-    editBtn.innerHTML = `<i class="fa-solid fa-file-pen"></i>`;
+    editBtn.textContent = `edit`;
 
     li.append(removeBtn, editBtn);
     ul.append(li);
@@ -48,10 +48,10 @@ function editTodo(e) {
 ul.addEventListener("click", function (e) {
   let content = e.target.textContent;
   
-  if (content === "Remove") {
+  if (content === "remove") {
     removeTodo(e);
   }
-  if (content === "Edit") {
+  if (content === "edit") {
     editTodo(e);
   }
 });
